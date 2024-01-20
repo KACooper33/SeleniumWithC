@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 
 namespace PageObjectModel.Source.Pages
 {
-    public class LoginPage
+    public class LoginPage : BasePage
     {
-        private IWebDriver _driver;
-        private ILogger _logger;
 
         //***********************************************
         // MATCHERS
@@ -32,22 +30,8 @@ namespace PageObjectModel.Source.Pages
     // Functions
     //***********************************************
 
-    public LoginPage(IWebDriver driver) 
+    public LoginPage(IWebDriver driver) : base(driver)
     {
-        _driver = driver;
-        PageFactory.InitElements(driver, this);
-
-        // create a logger factory
-        var loggerFactory = LoggerFactory.Create(
-            builder => builder
-                // add console as logging target
-                .AddConsole()
-                // add debug output as logging target
-                .AddDebug()
-                // set minimum level to log
-                .SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug)
-        );
-        _logger = loggerFactory.CreateLogger<LoginPage>();
     }
 
     public void Login(string username, string password)

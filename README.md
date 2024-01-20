@@ -14,4 +14,3 @@ Logging:
 Enhancements left to add:
  - logging output to a file (use nlog, log4net, or serilog)
  - Cucumber layer
- - base classes for page and test classes that should include teardown and setup
