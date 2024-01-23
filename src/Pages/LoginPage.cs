@@ -24,6 +24,11 @@ namespace PageObjectModel.Source.Pages
         [FindsBy(How = How.Name, Using = "commit")]
         private IWebElement _signIn_button;
 
+        [FindsBy(How = How.Id, Using = "flash_alert")]
+        private IWebElement _invalidEmailWarning;
+
+        [FindsBy(How = How.LinkText, Using = "Register")]
+        private IWebElement _registerLink;
 
 
     //***********************************************
@@ -44,6 +49,18 @@ namespace PageObjectModel.Source.Pages
         _signIn_button.Click();
     }
 
+
+    public void ClickRegisterLink()
+    {
+        _registerLink.Click();
+    }
+
+
+    public bool VerifyInvalidEmailWorning(string text)
+    {
+        var warningMatchesExpectedValue = _invalidEmailWarning.Text == text;
+        return warningMatchesExpectedValue;
+    }
 
     }
 }
