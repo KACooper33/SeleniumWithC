@@ -17,6 +17,5 @@
     <PackageReference Include="Selenium.Support" Version="4.16.2"/>
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0"/>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
-    <PackageReference Include="trxlog2html" Version="1.0.0"/>
   </ItemGroup>
 </Project>

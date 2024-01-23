@@ -13,6 +13,8 @@ How to run from command line:
 
 Reporting:
  - trxlog2html can be used to convert the trx into an html
+ - Requires .Net 5.0 installation
+ - Install with:  dotnet tool install --global trxlog2html --version 1.0.0
  - Command: trxlog2html -i SeleniumWithC.trx -o SeleniumWithC.html
 
 Unit Testing Frameworks: https://www.lambdatest.com/blog/nunit-vs-xunit-vs-mstest/
@@ -29,4 +31,4 @@ Logging:
 Enhancements left to add:
  - logging output to a file (use nlog, log4net, or serilog)
  - Cucumber or BDD layer
- - Instructions for running from command line
+
