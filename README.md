@@ -27,8 +27,5 @@ Page Object Model:
 Logging:
 - Microsoft.Extensions.Logging has been added. This implementation has limitations. The biggest being that the log itsn't output to a file. 
 
-
-Enhancements left to add:
- - logging output to a file (use nlog, log4net, or serilog)
- - Cucumber or BDD layer
-
+BDD for .NET (specflow)
+- https://docs.specflow.org/projects/specflow/en/latest/

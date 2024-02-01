@@ -46,6 +46,11 @@ namespace PageObjectModel.Source.Pages
         _logger.LogDebug($"Sending keys for Password:{password}");
         _password.SendKeys(password);
         _logger.LogInformation($"Clicking Sign In Button");
+        //_signIn_button.Click();
+    }
+    public void clickSignInButton()
+    {
+        _logger.LogInformation($"Clicking Sign In Button");
         _signIn_button.Click();
     }
 
