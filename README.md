@@ -1,5 +1,5 @@
 # SeleniumWithC
-Selenium with example using C# in a page object pattern
+Selenium example using C# in a page object pattern with SpecFlow for BDD
 
 SETUP:
  - VS Code 1.85.2
