@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SeleniumWithC.Src.Features
+namespace SeleniumWithC.Src.BDD.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -48,7 +48,7 @@ namespace SeleniumWithC.Src.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "src/Features", "Loginpage", "    As a user\n    I want to login to the application\n    So I can access protecte" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "src/BDD/Features", "Loginpage", "    As a user\n    I want to login to the application\n    So I can access protecte" +
                     "d pages", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -66,7 +66,7 @@ namespace SeleniumWithC.Src.Features
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Loginpage")))
             {
-                global::SeleniumWithC.Src.Features.LoginpageFeature.FeatureSetup(null);
+                global::SeleniumWithC.Src.BDD.Features.LoginpageFeature.FeatureSetup(null);
             }
         }
         
