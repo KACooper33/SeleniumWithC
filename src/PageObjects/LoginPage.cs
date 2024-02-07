@@ -31,41 +31,41 @@ namespace SeleniumWithC.src.PageObjects
         private IWebElement _registerLink;
 
 
-    //***********************************************
-    // Functions
-    //***********************************************
+        //***********************************************
+        // Functions
+        //***********************************************
 
-    public LoginPage(IWebDriver driver) : base(driver)
-    {
-    }
+        public LoginPage(IWebDriver driver) : base(driver)
+        {
+        }
 
-    public void Login(string username, string password)
-    {
-        _logger.LogInformation($"Sending keys for Username:{username}");
-        _username.SendKeys(username);
-        _logger.LogDebug($"Sending keys for Password:{password}");
-        _password.SendKeys(password);
-        _logger.LogInformation($"Clicking Sign In Button");
-        //_signIn_button.Click();
-    }
-    public void clickSignInButton()
-    {
-        _logger.LogInformation($"Clicking Sign In Button");
-        _signIn_button.Click();
-    }
-
-
-    public void ClickRegisterLink()
-    {
-        _registerLink.Click();
-    }
+        public void Login(string username, string password)
+        {
+            _logger.LogInformation($"Sending keys for Username:{username}");
+            _username.SendKeys(username);
+            _logger.LogDebug($"Sending keys for Password:{password}");
+            _password.SendKeys(password);
+            _logger.LogInformation($"Clicking Sign In Button");
+            //_signIn_button.Click();
+        }
+        public void clickSignInButton()
+        {
+            _logger.LogInformation($"Clicking Sign In Button");
+            _signIn_button.Click();
+        }
 
 
-    public bool VerifyInvalidEmailWorning(string text)
-    {
-        var warningMatchesExpectedValue = _invalidEmailWarning.Text == text;
-        return warningMatchesExpectedValue;
-    }
+        public void ClickRegisterLink()
+        {
+            _registerLink.Click();
+        }
+
+
+        public bool VerifyInvalidEmailWorning(string text)
+        {
+            var warningMatchesExpectedValue = _invalidEmailWarning.Text == text;
+            return warningMatchesExpectedValue;
+        }
 
     }
 }
