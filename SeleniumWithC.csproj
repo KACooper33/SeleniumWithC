@@ -19,5 +19,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
     <PackageReference Include="SpecFlow.MsTest" Version="3.9.74"/>
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57"/>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0"/>
   </ItemGroup>
 </Project>
