@@ -2,7 +2,7 @@ using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace CalculatorSelenium.Specs.Drivers
+namespace SeleniumWithC.src.Drivers
 {
     /// <summary>
     /// Manages a browser instance using Selenium

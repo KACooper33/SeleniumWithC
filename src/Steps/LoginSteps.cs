@@ -2,8 +2,8 @@ using System;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using PageObjectModel.Source.Pages;
-using CalculatorSelenium.Specs.Drivers;
+using SeleniumWithC.src.Drivers;
+using SeleniumWithC.src.PageObjects;
 
 namespace SeleniumWithC.Specs.StepDefinitions
 {

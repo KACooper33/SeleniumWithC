@@ -95,11 +95,11 @@ namespace SeleniumWithC.Src.Features
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify login completes successfully with valid credentials")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Loginpage")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("newtest")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BDD_Test")]
         public void VerifyLoginCompletesSuccessfullyWithValidCredentials()
         {
             string[] tagsOfScenario = new string[] {
-                    "newtest"};
+                    "BDD_Test"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify login completes successfully with valid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7

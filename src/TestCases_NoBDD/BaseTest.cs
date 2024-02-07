@@ -1,6 +1,8 @@
-namespace SeleniumWithC;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+
+namespace SeleniumWithC.src.TestCases_NoBDD;
+
 
 [TestClass]
 public class BaseTest

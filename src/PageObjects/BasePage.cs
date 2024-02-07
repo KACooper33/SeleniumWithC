@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectModel.Source.Pages
+namespace SeleniumWithC.src.PageObjects
 {
     public class BasePage
     {

@@ -3,7 +3,7 @@ Feature: Loginpage
     I want to login to the application
     So I can access protected pages
 
-@newtest
+@BDD_Test
 Scenario: Verify login completes successfully with valid credentials
     Given I navigate to the login pages
     When I enter a username agileway and password testwise
