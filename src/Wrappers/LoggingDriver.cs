@@ -1,41 +1,55 @@
+using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using SeleniumWithC.src.Wrappers;
 using SeleniumWithC.src.Wrappers.Driver;
 
 public class LoggingDriver : DriverDecorator
 {
+    
+    protected ILogger _logger;
+
     public LoggingDriver(Driver driver) : base(driver)
     {
-
+        // create a logger factory
+        var loggerFactory = LoggerFactory.Create(
+            builder => builder
+                // add console as logging target
+                .AddConsole()
+                // add debug output as logging target
+                .AddDebug()
+                // set minimum level to log                
+                .SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug)
+        );
+        _logger = loggerFactory.CreateLogger<LoggingDriver>();
     }
     
     public override void Start(Browser browser)
     {
-        Console.WriteLine($"Start browser = {Enum.GetName(typeof(Browser), browser)}");
+        _logger.LogInformation($"Start browser = {Enum.GetName(typeof(Browser), browser)}");
         Driver?.Start(browser);
     }
 
     public override void Quit()
     {
-        Console.WriteLine($"Close browser");
+        _logger.LogInformation($"Close browser");
         Driver?.Quit();
     }
 
     public override void GoToUrl(string url)
     {
-        Console.WriteLine($"Go to url = {url}");
+        _logger.LogInformation($"Go to url = {url}");
         Driver?.GoToUrl(url);
     }
 
     public override Element FindElement(By locator)
     {
-        Console.WriteLine("Find Element");
+        _logger.LogInformation($"Find Element by locator: {locator}");
         return Driver?.FindElement(locator);
     }
 
     public override List<Element> FindElements(By locator)
     {
-        Console.WriteLine("Find Elements");
+        _logger.LogInformation($"Find Elements by locator: {locator}");
         return Driver?.FindElements(locator);
     }
 }

@@ -37,7 +37,7 @@ namespace SeleniumWithC.src.PageObjects
                 .AddConsole()
                 // add debug output as logging target
                 .AddDebug()
-                // set minimum level to log
+                // set minimum level to log                
                 .SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug)
         );
         _logger = loggerFactory.CreateLogger<LoginPage>();

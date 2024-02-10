@@ -1,11 +1,25 @@
+using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
 using SeleniumWithC.src.Wrappers;
 
 public class LogElement : ElementDecorator
 {
+    protected ILogger _logger;
+
     public LogElement(Element element)
     :base(element)
     {
+                // create a logger factory
+        var loggerFactory = LoggerFactory.Create(
+            builder => builder
+                // add console as logging target
+                .AddConsole()
+                // add debug output as logging target
+                .AddDebug()
+                // set minimum level to log                
+                .SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug)
+        );
+        _logger = loggerFactory.CreateLogger<LogElement>();
 
     }
 
@@ -15,7 +29,7 @@ public class LogElement : ElementDecorator
     {
         get
         {
-            Console.WriteLine("Element Text = {Element?.Text}");
+            _logger.LogInformation($"Element Text = {Element?.Text}");
             return Element?.Text;
         }
     }
@@ -24,7 +38,7 @@ public class LogElement : ElementDecorator
     {
         get
         {
-            Console.WriteLine("Element Enabled = {Element?.Enabled}");
+            _logger.LogInformation($"Element Enabled = {Element?.Enabled}");
             return Element?.Enabled;
         }
     }
@@ -33,26 +47,26 @@ public class LogElement : ElementDecorator
     {
         get
         {
-            Console.WriteLine("Element Enabled = {Element?.Displayed}");
+            _logger.LogInformation($"Element Enabled = {Element?.Displayed}");
             return Element?.Displayed;
         }
     }
 
     public override void Click()
     {
-        Console.WriteLine("Element Clicked");
+        _logger.LogInformation("Element Clicked");
         Element?.Click();
     }
 
     public override string GetAttribute(string attributeName)
     {
-        Console.WriteLine("Get Element's Attribute = {attributeName}");
+        _logger.LogInformation($"Get Element's Attribute = {attributeName}");
         return Element?.GetAttribute(attributeName);
     }
 
     public override void TypeText(string text)
     {
-        Console.WriteLine($"Type Text = {text}");
+        _logger.LogInformation($"Type Text = {text}");
         Element?.TypeText(text);
     }
 }
