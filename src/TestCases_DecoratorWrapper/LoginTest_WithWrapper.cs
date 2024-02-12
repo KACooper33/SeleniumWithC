@@ -1,8 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumWithC.src.PageObjects;
-using SeleniumWithC.src.Wrappers;
-using SeleniumWithC.src.Wrappers.Driver;
+using SeleniumWithC.src.Drivers.Wrappers;
 
 namespace SeleniumWithC.src.TestCases_DecoratorWrapper;
 
@@ -14,7 +13,7 @@ public class LoginTest_WithWrapper
 
     [TestInitialize]
     public void Initialize(){
-        _driver = new LoggingDriver(new WebDriver());
+        _driver = new LoggingDriver(new SeleniumWithC.src.Drivers.Wrappers.WebDriver());
         _driver.Start(Browser.Chrome);
         _driver.GoToUrl("http://travel.agileway.net");       
     }

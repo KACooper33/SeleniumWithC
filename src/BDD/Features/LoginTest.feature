@@ -7,7 +7,6 @@ Feature: Loginpage
 Scenario: Verify login completes successfully with valid credentials
     Given I navigate to the login pages
     When I enter a username agileway and password testwise
-    And I click the sign in button
     Then I should be redirected to the home page
 
 # @newtest

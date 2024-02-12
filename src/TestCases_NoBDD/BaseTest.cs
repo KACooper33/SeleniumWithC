@@ -1,5 +1,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumWithC.src.Drivers.Wrappers;
 
 namespace SeleniumWithC.src.TestCases_NoBDD;
 
@@ -7,12 +8,13 @@ namespace SeleniumWithC.src.TestCases_NoBDD;
 [TestClass]
 public class BaseTest
 {
-    public IWebDriver driver = null;    
+    public Driver driver = null;    
 
     [TestInitialize]
     public void Initialize(){
-        driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://travel.agileway.net");       
+        driver = new LoggingDriver(new SeleniumWithC.src.Drivers.Wrappers.WebDriver());
+        driver.Start(Browser.Chrome);
+        driver.GoToUrl("http://travel.agileway.net");       
     }
 
     [TestCleanup]

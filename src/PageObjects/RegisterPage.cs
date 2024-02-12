@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SeleniumWithC.src.Drivers.Wrappers;
 
 namespace SeleniumWithC.src.PageObjects
 {
@@ -14,8 +15,8 @@ public class RegisterPage : BasePage
     //***********************************************
     // MATCHERS
     //***********************************************
-    [FindsBy(How = How.TagName, Using = "h2")]
-    private IWebElement _heading;
+    private Element _heading => _driver.FindElement(By.TagName("h2"));
+
 
 
     //***********************************************
@@ -23,7 +24,7 @@ public class RegisterPage : BasePage
     //***********************************************
 
 
-    public RegisterPage(IWebDriver driver) : base(driver)
+    public RegisterPage(Driver driver) : base(driver)
     {
     }
 

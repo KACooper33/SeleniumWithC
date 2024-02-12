@@ -4,12 +4,14 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumWithC.src.Drivers;
 using SeleniumWithC.src.PageObjects;
+using SeleniumWithC.src.Drivers.Wrappers;
+
 
 namespace SeleniumWithC.Specs.StepDefinitions
 {
     [Binding]
     public class LoginSteps{
-        private IWebDriver _driver = null;    
+        private Driver _driver = null;    
 
         
         public LoginSteps(BrowserDriver browserDriver){
@@ -18,7 +20,7 @@ namespace SeleniumWithC.Specs.StepDefinitions
 
         [Given(@"I navigate to the login pages")]
         public void GivenINavigateToTheLoginPages(){
-            _driver.Navigate().GoToUrl("http://travel.agileway.net");  
+            _driver.GoToUrl("http://travel.agileway.net");  
         }
 
         [When(@"I enter a username (.*) and password (.*)")]

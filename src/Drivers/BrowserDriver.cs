@@ -1,6 +1,8 @@
 using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumWithC.src.Drivers.Wrappers;
+
 
 namespace SeleniumWithC.src.Drivers
 {
@@ -9,33 +11,28 @@ namespace SeleniumWithC.src.Drivers
     /// </summary>
     public class BrowserDriver : IDisposable
     {
-        private readonly Lazy<IWebDriver> _currentWebDriverLazy;
+        private readonly Lazy<Driver> _currentWebDriverLazy;
         private bool _isDisposed;
 
         public BrowserDriver()
         {
-            _currentWebDriverLazy = new Lazy<IWebDriver>(CreateWebDriver);
+            _currentWebDriverLazy = new Lazy<Driver>(CreateWebDriver);
         }
 
         /// <summary>
         /// The Selenium IWebDriver instance
         /// </summary>
-        public IWebDriver Current => _currentWebDriverLazy.Value;
+        public Driver Current => _currentWebDriverLazy.Value;
 
         /// <summary>
         /// Creates the Selenium web driver (opens a browser)
         /// </summary>
         /// <returns></returns>
-        private IWebDriver CreateWebDriver()
+        private Driver CreateWebDriver()
         {
-            //We use the Chrome browser
-            var chromeDriverService = ChromeDriverService.CreateDefaultService();
-
-            var chromeOptions = new ChromeOptions();
-
-            var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
-
-            return chromeDriver;
+            Driver driver = new LoggingDriver(new SeleniumWithC.src.Drivers.Wrappers.WebDriver());
+            driver.Start(Browser.Chrome);
+            return driver;
         }
 
         /// <summary>

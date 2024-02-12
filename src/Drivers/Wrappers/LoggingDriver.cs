@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
-using SeleniumWithC.src.Wrappers;
-using SeleniumWithC.src.Wrappers.Driver;
+namespace SeleniumWithC.src.Drivers.Wrappers;
 
 public class LoggingDriver : DriverDecorator
 {

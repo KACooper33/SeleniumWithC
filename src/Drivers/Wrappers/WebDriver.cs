@@ -1,13 +1,11 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumWithC.src.Wrappers.Driver;
-using SeleniumWithC.src.Wrappers;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using SeleniumExtras.WaitHelpers;
 using System.Collections.ObjectModel;
 
-
+namespace SeleniumWithC.src.Drivers.Wrappers;
 public class WebDriver : Driver
 {
     private IWebDriver _webDriver;

@@ -2,8 +2,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras;
 using SeleniumExtras.WaitHelpers;
-using SeleniumWithC.src.Wrappers;
-
+namespace SeleniumWithC.src.Drivers.Wrappers;
 public class WebElement : Element
 {
     private readonly IWebDriver _webDriver;

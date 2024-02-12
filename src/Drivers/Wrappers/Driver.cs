@@ -1,8 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.V118.Browser;
-using SeleniumWithC.src.Wrappers;
 
-namespace SeleniumWithC.src.Wrappers.Driver;
+namespace SeleniumWithC.src.Drivers.Wrappers;
 
 
 public abstract class Driver

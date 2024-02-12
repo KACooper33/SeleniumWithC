@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SeleniumWithC.src.Drivers.Wrappers;
+
 
 namespace SeleniumWithC.src.PageObjects
 {
@@ -14,8 +16,7 @@ public class SelectFlightPage : BasePage
     //***********************************************
     // MATCHERS
     //***********************************************
-    [FindsBy(How = How.Id, Using = "flash_notice")]
-    private IWebElement _signedInNotice;
+    private Element _signedInNotice => _driver.FindElement(By.Id("flash_notice"));
 
 
     //***********************************************
@@ -23,7 +24,7 @@ public class SelectFlightPage : BasePage
     //***********************************************
 
 
-    public SelectFlightPage(IWebDriver driver) : base(driver)
+    public SelectFlightPage(Driver driver) : base(driver)
     {
     }
 

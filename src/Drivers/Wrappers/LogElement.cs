@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Logging;
 using OpenQA.Selenium;
-using SeleniumWithC.src.Wrappers;
-
+namespace SeleniumWithC.src.Drivers.Wrappers;
 public class LogElement : ElementDecorator
 {
     protected ILogger _logger;

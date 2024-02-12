@@ -13,7 +13,6 @@ public class LoginTest : BaseTest
     {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.Login("agileway", "testwise");
-        loginPage.clickSignInButton();
         SelectFlightPage selectFlightPage = new SelectFlightPage(driver);
         Assert.IsTrue(selectFlightPage.VerifySignedIn("Signed in!"), "Signed In was not found after completing login");
     }
@@ -23,7 +22,6 @@ public class LoginTest : BaseTest
     {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.Login("agileway", "incorrect");
-        loginPage.clickSignInButton();
         Assert.IsTrue(loginPage.VerifyInvalidEmailWorning("Invalid email or password"), "Failed to find 'Invalid email or password' warning after entering invalid credentials");
     }
 

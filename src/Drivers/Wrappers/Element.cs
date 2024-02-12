@@ -1,5 +1,5 @@
 using OpenQA.Selenium;
-namespace SeleniumWithC.src.Wrappers;
+namespace SeleniumWithC.src.Drivers.Wrappers;
 
 public abstract class Element
 {

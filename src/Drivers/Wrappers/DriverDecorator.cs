@@ -1,7 +1,6 @@
 using OpenQA.Selenium;
-using SeleniumWithC.src.Wrappers;
-using SeleniumWithC.src.Wrappers.Driver;
 
+namespace SeleniumWithC.src.Drivers.Wrappers;
 public abstract class DriverDecorator : Driver
 {
     protected readonly Driver Driver;
